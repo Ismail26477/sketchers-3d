@@ -25,45 +25,7 @@ import g12 from "@/assets/12.jpeg";
 import g13 from "@/assets/13.jpeg";
 import g14 from "@/assets/14.jpeg";
 import g15 from "@/assets/15.jpeg";
-import g16 from "@/assets/16.jpeg";
-import g17 from "@/assets/17.jpeg";
-import g18 from "@/assets/18.jpeg";
-import g19 from "@/assets/19.jpeg";
-import g20 from "@/assets/20.jpeg";
-import g21 from "@/assets/21.png";
-import g22 from "@/assets/22.png";
-import g23 from "@/assets/23.png";
-import g24 from "@/assets/24.png";
-import g25 from "@/assets/25.png";
-import g26 from "@/assets/26.jpeg";
-import g27 from "@/assets/27.jpeg";
-import g28 from "@/assets/28.jpeg";
-import g29 from "@/assets/29.jpeg";
-import g30 from "@/assets/30.jpeg";
-import g31 from "@/assets/31.jpeg";
-import g32 from "@/assets/32.jpeg";
-import g33 from "@/assets/33.jpeg";
-import g34 from "@/assets/34.jpeg";
-import g35 from "@/assets/35.jpeg";
-import g36 from "@/assets/36.jpeg";
-import g37 from "@/assets/37.jpeg";
-import g38 from "@/assets/38.jpeg";
-import g39 from "@/assets/39.jpeg";
-import g40 from "@/assets/40.jpeg";
-import g41 from "@/assets/41.png";
-import g42 from "@/assets/42.png";
-import g43 from "@/assets/43.png";
-import g44 from "@/assets/44.png";
-import g45 from "@/assets/45.png";
-import g46 from "@/assets/46.jpeg";
-import g47 from "@/assets/47.jpeg";
-import g48 from "@/assets/48.webp";
-import g49 from "@/assets/49.jpeg";
-import g50 from "@/assets/50.jpeg";
-import g51 from "@/assets/51.jpeg";
-import g52 from "@/assets/52.jpeg";
 import g53 from "@/assets/53.jpeg";
-import g54 from "@/assets/54.jpeg";
 import g55 from "@/assets/55.jpeg";
 import g56 from "@/assets/56.jpeg";
 import g57 from "@/assets/57.jpeg";
@@ -83,8 +45,6 @@ import g70 from "@/assets/70.jpeg";
 import g71 from "@/assets/71.jpeg";
 import g72 from "@/assets/72.jpeg";
 import g73 from "@/assets/73.jpeg";
-import g74 from "@/assets/74.jpeg";
-import g75 from "@/assets/75.jpeg";
 import g76 from "@/assets/76.jpeg";
 import g77 from "@/assets/77.jpeg";
 import g78 from "@/assets/78.jpeg";
@@ -267,13 +227,9 @@ function Services() {
 /* --------------------------------- Gallery --------------------------------- */
 const GALLERY = [
   g1, g2, g3, g4, g5, g6, g7, g8, g9, g10,
-  g11, g12, g13, g14, g15, g16, g17, g18, g19, g20,
-  g21, g22, g23, g24, g25, g26, g27, g28, g29, g30,
-  g31, g32, g33, g34, g35, g36, g37, g38, g39, g40,
-  g41, g42, g43, g44, g45, g46, g47, g48, g49, g50,
-  g51, g52, g53, g54, g55, g56, g57, g58, g59, g60,
-  g61, g62, g63, g64, g65, g66, g67, g68, g69, g70,
-  g71, g72, g73, g74, g75, g76, g77, g78, g79, g80,
+  g11, g12, g13, g14, g15, g53, g55, g56, g57, g58,
+  g59, g60, g61, g62, g63, g64, g65, g66, g67, g68,
+  g69, g70, g71, g72, g73, g76, g77, g78, g79, g80,
   g81, g82, g83,
 ];
 // Editorial pattern: repeating groups
@@ -369,7 +325,7 @@ import client44 from "@/assets/Compact.jpeg";
 import client45 from "@/assets/TheFirstFerry.jpeg";
 import client46 from "@/assets/Atharva.jpeg";
 import client47 from "@/assets/Green.jpeg";
-import client48 from "@/assets/LGdevelopers.jpeg";
+import client48 from "@/assets/LGDevelopers.jpeg";
 import client49 from "@/assets/Emaarat.jpeg";
 import client50 from "@/assets/sidde.jpeg";
 import client51 from "@/assets/shriniwasa.jpeg";
