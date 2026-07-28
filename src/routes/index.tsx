@@ -99,7 +99,7 @@ export const Route = createFileRoute("/")({
   component: LandingPage,
 });
 
-const HERO_VIDEO = "/videos/IMG_8120.mp4";
+const HERO_VIDEO = "/videos/hero.mp4";
 
 function Hero() {
   return (
