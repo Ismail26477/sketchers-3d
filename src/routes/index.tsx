@@ -104,17 +104,22 @@ const HERO_VIDEO =
 
 function Hero() {
   return (
-    <section id="top" className="relative h-screen w-full overflow-hidden bg-black">
-      <video
-        className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 scale-[1.25] object-cover"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        src={HERO_VIDEO}
-      />
-    </section>
+    <section
+  id="top"
+  className="relative w-full overflow-hidden bg-black min-h-[100svh]"
+>
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="auto"
+    className="absolute inset-0 h-full w-full object-cover"
+    src={HERO_VIDEO}
+  />
+
+  <div className="absolute inset-0 bg-black/20" />
+</section>
   );
 }
 /* ----------------------------- Solutions ------------------------------ */
