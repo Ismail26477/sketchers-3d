@@ -367,7 +367,7 @@ import client44 from "@/assets/Compact.jpeg";
 import client45 from "@/assets/TheFirstFerry.jpeg";
 import client46 from "@/assets/Atharva.jpeg";
 import client47 from "@/assets/Green.jpeg";
-import client48 from "@/assets/LGdevelopers.jpeg";
+import client48 from "@/assets/LGDevelopers.jpeg";
 import client49 from "@/assets/Emaarat.jpeg";
 import client50 from "@/assets/sidde.jpeg";
 import client51 from "@/assets/shriniwasa.jpeg";
