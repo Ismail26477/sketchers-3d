@@ -108,14 +108,19 @@ function Hero() {
       className="relative h-screen w-full overflow-hidden bg-black"
     >
       <video
-        className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 scale-[1.25] object-cover"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        src={HERO_VIDEO}
-      />
+  controls
+  autoPlay
+  muted
+  loop
+  playsInline
+  onLoadedData={() => console.log("Video loaded")}
+  onCanPlay={() => console.log("Can play")}
+  onError={(e) => console.log("Video error", e.currentTarget.error)}
+  className="w-full h-full object-cover"
+>
+  <source src="/videos/hero.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
 
       {/* Optional dark overlay */}
       <div className="absolute inset-0 bg-black/30" />
