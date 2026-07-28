@@ -99,35 +99,24 @@ export const Route = createFileRoute("/")({
   component: LandingPage,
 });
 
-const HERO_VIDEO = "/videos/hero.mp4";
+const HERO_VIDEO =
+  "https://res.cloudinary.com/russ1zet/video/upload/v1784095512/WhatsApp_Video_2026-07-14_at_23.14.34_fgeaor.mp4";
 
 function Hero() {
   return (
-    <section
-      id="top"
-      className="relative h-screen w-full overflow-hidden bg-black"
-    >
+    <section id="top" className="relative h-screen w-full overflow-hidden bg-black">
       <video
-  controls
-  autoPlay
-  muted
-  loop
-  playsInline
-  onLoadedData={() => console.log("Video loaded")}
-  onCanPlay={() => console.log("Can play")}
-  onError={(e) => console.log("Video error", e.currentTarget.error)}
-  className="w-full h-full object-cover"
->
-  <source src="/videos/hero.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
-
-      {/* Optional dark overlay */}
-      <div className="absolute inset-0 bg-black/30" />
+        className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 scale-[1.25] object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        src={HERO_VIDEO}
+      />
     </section>
   );
 }
-
 /* ----------------------------- Solutions ------------------------------ */
 const SOLUTION_LINKS = [
   { title: "Still Render", to: "/services/still-render" },
