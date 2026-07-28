@@ -99,7 +99,7 @@ export const Route = createFileRoute("/")({
   component: LandingPage,
 });
 
-const HERO_VIDEO = "/videos/IMG_8120.MOV";
+const HERO_VIDEO = "  "https://res.cloudinary.com/russ1zet/video/upload/v1784095512/WhatsApp_Video_2026-07-14_at_23.14.34_fgeaor.mp4";
 /* --------------------------------- Hero --------------------------------- */
 function Hero() {
   return (
