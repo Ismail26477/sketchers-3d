@@ -99,12 +99,14 @@ export const Route = createFileRoute("/")({
   component: LandingPage,
 });
 
-const HERO_VIDEO =
-  "https://res.cloudinary.com/russ1zet/video/upload/v1784095512/WhatsApp_Video_2026-07-14_at_23.14.34_fgeaor.mp4";
+const HERO_VIDEO = "/videos/IMG_8120.mp4";
 
 function Hero() {
   return (
-    <section id="top" className="relative h-screen w-full overflow-hidden bg-black">
+    <section
+      id="top"
+      className="relative h-screen w-full overflow-hidden bg-black"
+    >
       <video
         className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 scale-[1.25] object-cover"
         autoPlay
@@ -114,6 +116,9 @@ function Hero() {
         preload="auto"
         src={HERO_VIDEO}
       />
+
+      {/* Optional dark overlay */}
+      <div className="absolute inset-0 bg-black/30" />
     </section>
   );
 }
