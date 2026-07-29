@@ -104,24 +104,30 @@ const HERO_VIDEO =
 
 function Hero() {
   return (
-   <section
-  id="top"
-  className="relative h-screen w-full overflow-hidden"
->
-  <video
-    autoPlay
-    muted
-    loop
-    playsInline
-    preload="auto"
-    className="absolute inset-0 h-full w-full object-cover scale-110"
-    src={HERO_VIDEO}
-  />
+    <section
+      id="top"
+      className="relative w-full h-screen overflow-hidden bg-black"
+    >
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        src={HERO_VIDEO}
+        className="absolute inset-0 w-full h-full object-cover scale-[1.15] md:scale-[1.08] origin-center"
+      />
 
-  <div className="absolute inset-0 bg-black/20" />
-</section>  );
-}
-/* ----------------------------- Solutions ------------------------------ */
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/20" />
+
+      {/* Content */}
+      <div className="relative z-10 flex h-full w-full items-center justify-center">
+        {/* Add hero content here if needed */}
+      </div>
+    </section>
+  );
+}/* ----------------------------- Solutions ------------------------------ */
 const SOLUTION_LINKS = [
   { title: "Still Render", to: "/services/still-render" },
   { title: "Video Walkthrough", to: "/services/video-walkthrough" },
