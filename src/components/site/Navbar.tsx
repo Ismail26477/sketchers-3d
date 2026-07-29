@@ -21,7 +21,7 @@ export function Navbar() {
         scrolled ? "bg-white/0 border-white/5" : "bg-transparent"
       }`}
     >
-<nav className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-4 sm:h-24 sm:px-6 lg:h-24 lg:px-12">
+<nav className="mx-auto flex h-12 max-w-[1440px] items-center justify-between px-4 sm:h-24 sm:px-6 lg:h-24 lg:px-12">
   <Link to="/" className="flex items-center">
           <img
             src={logo}
