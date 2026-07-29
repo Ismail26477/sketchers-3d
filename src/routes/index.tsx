@@ -100,7 +100,7 @@ export const Route = createFileRoute("/")({
 });
 
 const HERO_VIDEO =
-  "https://res.cloudinary.com/russ1zet/video/upload/v1784095512/WhatsApp_Video_2026-07-14_at_23.14.34_fgeaor.mp4";
+  https://res.cloudinary.com/pv9t1koc/video/upload/v1785316278/3d_sketch_final_vedio_zs6v4i.mp4";
 
 function Hero() {
   return (
