@@ -104,37 +104,17 @@ const HERO_VIDEO =
 
 function Hero() {
   return (
-    function Hero() {
-  return (
-    <section
-      id="top"
-      className="relative w-full h-screen overflow-hidden"
-    >
+    <section id="top" className="relative h-screen w-full overflow-hidden bg-black">
       <video
+        className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 scale-[1.25] object-cover"
         autoPlay
         muted
         loop
         playsInline
         preload="auto"
         src={HERO_VIDEO}
-        className="
-          absolute
-          top-1/2
-          left-1/2
-          min-w-full
-          min-h-full
-          -translate-x-1/2
-          -translate-y-1/2
-          object-cover
-          scale-[1.35]
-          md:scale-[1.15]
-        "
       />
-
-      <div className="absolute inset-0 bg-black/20" />
     </section>
-  );
-}
   );
 }/* ----------------------------- Solutions ------------------------------ */
 const SOLUTION_LINKS = [
