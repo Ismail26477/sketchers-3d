@@ -32,7 +32,7 @@ export function Navbar() {
 
         <Link
           to="/contact"
-className="border border-black bg-black px-3 py-2 text-[10px] font-medium uppercase tracking-[0.15em] text-white transition-all duration-300 hover:bg-white hover:text-black sm:px-6 sm:py-2.5 sm:text-[10px] lg:px-8 lg:py-3 lg:text-[11px] lg:tracking-[0.25em]"        >
+className="border border-black bg-black px-3 py-2 text-[13px] font-medium uppercase tracking-[0.15em] text-white transition-all duration-300 hover:bg-white hover:text-black sm:px-6 sm:py-2.5 sm:text-[10px] lg:px-8 lg:py-3 lg:text-[11px] lg:tracking-[0.25em]"        >
           Contact
         </Link>
       </nav>
