@@ -26,7 +26,7 @@ export function Navbar() {
           <img
             src={logo}
             alt="Sketchers 3D"
-            className="h-10 w-auto sm:h-12 lg:h-16"
+            className="h-16 w-auto sm:h-12 lg:h-16"
           />
         </Link>
 
