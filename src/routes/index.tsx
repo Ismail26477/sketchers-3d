@@ -104,9 +104,11 @@ const HERO_VIDEO =
 
 function Hero() {
   return (
+    function Hero() {
+  return (
     <section
       id="top"
-      className="relative w-full h-screen overflow-hidden bg-black"
+      className="relative w-full h-screen overflow-hidden"
     >
       <video
         autoPlay
@@ -115,17 +117,24 @@ function Hero() {
         playsInline
         preload="auto"
         src={HERO_VIDEO}
-        className="absolute inset-0 w-full h-full object-cover scale-[1.15] md:scale-[1.08] origin-center"
+        className="
+          absolute
+          top-1/2
+          left-1/2
+          min-w-full
+          min-h-full
+          -translate-x-1/2
+          -translate-y-1/2
+          object-cover
+          scale-[1.35]
+          md:scale-[1.15]
+        "
       />
 
-      {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/20" />
-
-      {/* Content */}
-      <div className="relative z-10 flex h-full w-full items-center justify-center">
-        {/* Add hero content here if needed */}
-      </div>
     </section>
+  );
+}
   );
 }/* ----------------------------- Solutions ------------------------------ */
 const SOLUTION_LINKS = [
