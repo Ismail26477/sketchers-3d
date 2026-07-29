@@ -104,9 +104,9 @@ const HERO_VIDEO =
 
 function Hero() {
   return (
-    <section
+   <section
   id="top"
-  className="relative w-full overflow-hidden bg-black min-h-[100svh]"
+  className="relative h-screen w-full overflow-hidden"
 >
   <video
     autoPlay
@@ -114,13 +114,12 @@ function Hero() {
     loop
     playsInline
     preload="auto"
-    className="absolute inset-0 h-full w-full object-cover"
+    className="absolute inset-0 h-full w-full object-cover scale-110"
     src={HERO_VIDEO}
   />
 
   <div className="absolute inset-0 bg-black/20" />
-</section>
-  );
+</section>  );
 }
 /* ----------------------------- Solutions ------------------------------ */
 const SOLUTION_LINKS = [
