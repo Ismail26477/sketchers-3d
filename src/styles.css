@@ -97,12 +97,108 @@
   box-shadow: 0 30px 60px -30px rgba(17, 17, 17, 0.15), 0 12px 30px -12px rgba(17, 17, 17, 0.08);
 }
 
-/* Lightbox theme overrides */
-.yarl__container { background: rgba(255, 255, 255, 0.55) !important; backdrop-filter: blur(80px) saturate(140%); -webkit-backdrop-filter: blur(80px) saturate(140%); }
-.yarl__button { color: #111 !important; }
-.yarl__button:hover { color: #C9A96E !important; }
-.yarl__slide_image { border-radius: 4px; box-shadow: 0 40px 100px -20px rgba(0,0,0,0.25); }
-.yarl__navigation_prev, .yarl__navigation_next { display: none !important; }
-.yarl__toolbar .yarl__button[aria-label="Zoom in"],
-.yarl__toolbar .yarl__button[aria-label="Zoom out"] { display: none !important; }
+/* =====================================================
+   Premium White Frosted Glass Lightbox
+===================================================== */
 
+.yarl__root {
+  --yarl__color_backdrop: transparent;
+}
+
+.yarl__container {
+  background: rgba(255, 255, 255, 0.88) !important;
+
+  backdrop-filter: blur(18px) saturate(180%) brightness(1.02);
+  -webkit-backdrop-filter: blur(18px) saturate(180%) brightness(1.02);
+
+  transition: background .45s ease,
+              backdrop-filter .45s ease;
+}
+
+/* Center Image */
+
+.yarl__slide_image {
+  border-radius: 3px !important;
+
+  box-shadow:
+      0 30px 80px rgba(0,0,0,.18),
+      0 8px 25px rgba(0,0,0,.08);
+
+  transform: scale(.97);
+
+  transition:
+      transform .35s ease,
+      box-shadow .35s ease;
+}
+
+.yarl__slide_current .yarl__slide_image {
+  transform: scale(1);
+}
+
+/* Toolbar */
+
+.yarl__toolbar {
+  background: transparent !important;
+}
+
+.yarl__button {
+  color: rgba(0,0,0,.55) !important;
+  transition: .25s;
+}
+
+.yarl__button:hover {
+  color: #111 !important;
+}
+
+/* Hide Zoom Buttons */
+
+.yarl__toolbar .yarl__button[aria-label="Zoom in"],
+.yarl__toolbar .yarl__button[aria-label="Zoom out"] {
+  display: none !important;
+}
+
+/* Hide Prev / Next */
+
+.yarl__navigation_prev,
+.yarl__navigation_next {
+  display: none !important;
+}
+
+/* Image Animation */
+
+.yarl__slide {
+  animation: fadeZoom .35s ease;
+}
+
+@keyframes fadeZoom {
+
+  from{
+      opacity:0;
+      transform:scale(.96);
+  }
+
+  to{
+      opacity:1;
+      transform:scale(1);
+  }
+
+}
+
+/* Smooth Closing */
+
+.yarl__portal {
+  transition: opacity .35s ease;
+}
+
+/* Better Cursor */
+
+.yarl__slide_image {
+  cursor: zoom-in;
+}
+
+/* Improve Quality */
+
+.yarl__slide_image img,
+.yarl__slide img {
+  image-rendering: auto;
+}
