@@ -100,7 +100,7 @@ export const Route = createFileRoute("/")({
 });
 
 const HERO_VIDEO =
-  "https://res.cloudinary.com/pv9t1koc/video/upload/v1785316278/3d_sketch_final_vedio_zs6v4i.mp4";
+  "https://res.cloudinary.com/oqd8cn54/video/upload/v1785787217/hero1_k6p321.mp4";
 
 function Hero() {
   return (
@@ -394,27 +394,29 @@ const CLIENTS = [
   { name: "Vatsalya Group", src: client53 },
 ];
 
-
 function Clients() {
   const row = [...CLIENTS, ...CLIENTS];
   return (
     <section id="clients" className="border-t border-border py-12 md:py-16">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
-        <p className="mb-8 text-center text-[11px] uppercase tracking-[0.4em] text-primary">
+        <p className="mb-10 text-center text-[11px] uppercase tracking-[0.4em] text-primary">
           Trusted by studios &amp; developers worldwide
         </p>
       </div>
-      <div className="relative overflow-hidden pause-on-hover">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-32 bg-gradient-to-r from-background to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-32 bg-gradient-to-l from-background to-transparent" />
-        <div className="marquee-child flex w-max items-center marquee-slow gap-16 px-8">
+      <div className="relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-background to-transparent md:w-32" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-background to-transparent md:w-32" />
+        <div className="marquee-child flex w-max items-center marquee-slow gap-3 md:gap-4">
           {row.map((c, i) => (
-            <div key={i} className="shrink-0 flex items-center justify-center h-20 md:h-24">
+            <div
+              key={i}
+              className="group relative h-20 w-32 shrink-0 overflow-hidden rounded-sm border border-border bg-card transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-luxe md:h-24 md:w-40"
+            >
               <img
                 src={c.src}
                 alt={c.name}
                 loading="lazy"
-                className="max-h-full w-auto object-contain"
+                className="h-full w-full object-cover opacity-90 transition-opacity duration-300 group-hover:opacity-100"
               />
             </div>
           ))}
