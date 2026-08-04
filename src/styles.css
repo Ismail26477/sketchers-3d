@@ -246,3 +246,20 @@
       0 0 15px rgba(37, 211, 102, 0.5);
   }
 }
+
+.hero-video{
+    animation: heroZoom 18s ease-in-out infinite alternate;
+    transform-origin:center;
+}
+
+@keyframes heroZoom{
+
+    0%{
+        transform:scale(1);
+    }
+
+    100%{
+        transform:scale(1.08);
+    }
+
+}
