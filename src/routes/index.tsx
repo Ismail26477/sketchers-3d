@@ -104,17 +104,29 @@ const HERO_VIDEO =
 
 function Hero() {
   return (
-    <section id="top" className="relative h-screen w-full overflow-hidden bg-black">
-      <video
-        className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 scale-[1.25] object-cover"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        src={HERO_VIDEO}
-      />
-    </section>
+    <section
+  id="top"
+  className="relative h-[60vh] md:h-screen overflow-hidden bg-black"
+>
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="auto"
+    src={HERO_VIDEO}
+    className="
+      absolute
+      left-1/2
+      top-1/2
+      min-w-full
+      min-h-full
+      -translate-x-1/2
+      -translate-y-1/2
+      object-cover
+    "
+  />
+</section>
   );
 }/* ----------------------------- Solutions ------------------------------ */
 const SOLUTION_LINKS = [
@@ -263,14 +275,14 @@ function Services() {
 
 /* --------------------------------- Gallery --------------------------------- */
 const GALLERY = [
-  g1, g2, g3, g4, g5, g6, g7, g8, g9, g10,
+  g74, g1, g2, g79, g78, g77, g5, g6, g7, g8, g50, g10,
   g11, g12, g13, g14, g15, g16, g17, g18, g19, g20,
   g21, g22, g23, g24, g25, g26, g27, g28, g29, g30,
   g31, g32, g33, g34, g35, g36, g37, g38, g39, g40,
-  g41, g43, g45, g46, g47, g48, g49, g50,
+  g41, g43, g45, g46, g47, g48, g49, g9,
   g51, g52, g53, g54, g55, g56, g57, g58, g59, g60,
   g61, g62, g63, g64, g65, g66, g67, g68, g69, g70,
-  g71, g72, g73, g74, g75, g76, g77, g78, g79, g80,
+  g71, g72, g73, g75, g76, g4, g3, g80,
   g81, g82, g83,
 ];
 // Editorial pattern: repeating groups
@@ -335,43 +347,81 @@ function Gallery() {
       </div>
 
       <Lightbox
-        open={index >= 0}
-        index={index}
-        close={() => setIndex(-1)}
-        slides={items.map((it) => ({ src: GALLERY[it.indices[0]] }))}
-        plugins={[Zoom]}
-        animation={{ fade: 300, swipe: 400 }}
-        controller={{ closeOnBackdropClick: true }}
-        carousel={{ finite: false }}
-        zoom={{ maxZoomPixelRatio: 3, scrollToZoom: true }}
-        render={{
-          buttonPrev: () => null,
-          buttonNext: () => null,
-        }}
-      />
+  open={index >= 0}
+  index={index}
+  close={() => setIndex(-1)}
+  slides={items.map((it) => ({
+    src: GALLERY[it.indices[0]],
+  }))}
+  plugins={[Zoom]}
+  animation={{ fade: 300, swipe: 400 }}
+  controller={{
+    closeOnBackdropClick: true,
+  }}
+  carousel={{
+    finite: false,
+  }}
+  zoom={{
+    maxZoomPixelRatio: 3,
+    scrollToZoom: true,
+  }}
+  render={{
+    buttonPrev: () => null,
+    buttonNext: () => null,
+
+    slide: ({ slide }) => (
+      <div className="relative w-full h-full flex items-center justify-center">
+        {/* Left clickable area */}
+        <div
+          className="absolute left-0 top-0 h-full w-1/2 z-20 cursor-pointer"
+          onClick={() =>
+            setIndex((prev) =>
+              prev === 0 ? items.length - 1 : prev - 1
+            )
+          }
+        />
+
+        {/* Right clickable area */}
+        <div
+          className="absolute right-0 top-0 h-full w-1/2 z-20 cursor-pointer"
+          onClick={() =>
+            setIndex((prev) =>
+              prev === items.length - 1 ? 0 : prev + 1
+            )
+          }
+        />
+
+        <img
+          src={slide.src}
+          className="max-w-full max-h-full object-contain"
+        />
+      </div>
+    ),
+  }}
+/>
     </section>
   );
 }
 
 /* --------------------------------- Clients --------------------------------- */
-import client36 from "@/assets/Chattarpur.jpeg";
-import client37 from "@/assets/Vrindavan.jpeg";
-import client38 from "@/assets/Pyramid.jpeg";
-import client39 from "@/assets/Chintamani.jpeg";
-import client40 from "@/assets/Sivana.jpeg";
-import client41 from "@/assets/Ambika.jpeg";
-import client42 from "@/assets/LSSB.jpeg";
-import client43 from "@/assets/Vistaar.jpeg";
-import client44 from "@/assets/Compact.jpeg";
-import client45 from "@/assets/TheFirstFerry.jpeg";
-import client46 from "@/assets/Atharva.jpeg";
-import client47 from "@/assets/Green.jpeg";
-import client48 from "@/assets/LGDevelopers.jpeg";
-import client49 from "@/assets/Emaarat.jpeg";
-import client50 from "@/assets/sidde.jpeg";
-import client51 from "@/assets/shriniwasa.jpeg";
-import client52 from "@/assets/omsatyam.jpeg";
-import client53 from "@/assets/Vatsalya.jpeg";
+import client36 from "@/assets/Chattarpur.png";
+import client37 from "@/assets/Vrindavan.png";
+import client38 from "@/assets/Pyramid.png";
+import client39 from "@/assets/Chintamani.png";
+import client40 from "@/assets/Sivana.png";
+import client41 from "@/assets/Ambika.png";
+import client42 from "@/assets/LSSB.png";
+import client43 from "@/assets/Vistaar.png";
+import client44 from "@/assets/Compact.png";
+import client45 from "@/assets/TheFirstFerry.png";
+import client46 from "@/assets/Atharva.png";
+import client47 from "@/assets/Green.png";
+import client48 from "@/assets/LGDevelopers.png";
+import client49 from "@/assets/Emaarat.png";
+import client50 from "@/assets/sidde.png";
+import client51 from "@/assets/shriniwasa.png";
+import client52 from "@/assets/omsatyam.png";
+import client53 from "@/assets/Vatsalya.png";
 
 const CLIENTS = [
   { name: "Chattarpur Farms", src: client36 },
@@ -381,14 +431,14 @@ const CLIENTS = [
   { name: "Sivana Greens", src: client40 },
   { name: "Ambika Farms", src: client41 },
   { name: "SSB Homes", src: client42 },
+    { name: "LG Developers & Builders", src: client48 },
   { name: "Vistaar Architects", src: client43 },
   { name: "Compact Builders", src: client44 },
+    { name: "Atharva Infrastructures", src: client46 },
   { name: "The First Ferry", src: client45 },
-  { name: "Atharva Infrastructures", src: client46 },
   { name: "Green City Builders", src: client47 },
-  { name: "LG Developers & Builders", src: client48 },
-  { name: "Emaarat Creators", src: client49 },
   { name: "Siddheshwar Group", src: client50 },
+    { name: "Emaarat Creators", src: client49 },
   { name: "Shriniwasa Builders & Developers", src: client51 },
   { name: "Om Satyam Buildcons", src: client52 },
   { name: "Vatsalya Group", src: client53 },
@@ -406,21 +456,20 @@ function Clients() {
       <div className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-background to-transparent md:w-32" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-background to-transparent md:w-32" />
-        <div className="marquee-child flex w-max items-center marquee-slow gap-3 md:gap-4">
-          {row.map((c, i) => (
-            <div
-              key={i}
-              className="group relative h-20 w-32 shrink-0 overflow-hidden rounded-sm border border-border bg-card transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-luxe md:h-24 md:w-40"
-            >
-              <img
-                src={c.src}
-                alt={c.name}
-                loading="lazy"
-                className="h-full w-full object-cover opacity-90 transition-opacity duration-300 group-hover:opacity-100"
-              />
-            </div>
-          ))}
-        </div>
+        <div className="marquee-child flex w-max items-center gap-1 md:gap-1 marquee-slow">
+  {row.map((c, i) => (
+    <div
+      key={i}
+      className="flex shrink-0 items-center justify-center px-1"
+    >
+      <img
+        src={c.src}
+        alt={c.name}
+        className="h-24 md:h-28 lg:h-32 w-auto object-contain grayscale"
+      />
+    </div>
+  ))}
+</div>
       </div>
     </section>
   );
