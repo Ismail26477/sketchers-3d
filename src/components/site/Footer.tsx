@@ -15,10 +15,10 @@ export function Footer() {
         {/* Brand row */}
         <div className="mb-10 flex items-center gap-4 lg:mb-12">
           <img
-            src={logo}
-            alt="Sketchers 3D"
-            className="h-12 w-auto md:h-16"
-          />
+  src={logo}
+  alt="Sketchers 3D"
+  className="h-12 w-auto md:h-16 brightness-0 invert"
+/>
         </div>
 
 
