@@ -12,40 +12,27 @@ import { Footer } from "@/components/site/Footer";
 
 import g1 from "@/assets/1.jpeg";
 import g2 from "@/assets/2.jpeg";
-import g3 from "@/assets/3.jpeg";
 import g4 from "@/assets/4.jpeg";
 import g5 from "@/assets/5.jpeg";
 import g6 from "@/assets/6.jpeg";
 import g7 from "@/assets/7.jpeg";
 import g8 from "@/assets/8.jpeg";
 import g9 from "@/assets/9.jpeg";
-import g10 from "@/assets/10.jpeg";
-import g11 from "@/assets/11.jpeg";
 import g12 from "@/assets/12.jpeg";
 import g13 from "@/assets/13.jpeg";
 import g14 from "@/assets/14.jpeg";
-import g15 from "@/assets/15.jpeg";
 import g16 from "@/assets/16.jpeg";
 import g17 from "@/assets/17.jpeg";
 import g18 from "@/assets/18.jpeg";
 import g19 from "@/assets/19.jpeg";
 import g20 from "@/assets/20.jpeg";
-import g21 from "@/assets/21.png";
 import g22 from "@/assets/22.png";
 import g23 from "@/assets/23.png";
 import g24 from "@/assets/24.png";
-import g25 from "@/assets/25.png";
 import g26 from "@/assets/26.jpeg";
-import g27 from "@/assets/27.jpeg";
-import g28 from "@/assets/28.jpeg";
-import g29 from "@/assets/29.jpeg";
-import g30 from "@/assets/30.jpeg";
-import g31 from "@/assets/31.jpeg";
 import g32 from "@/assets/32.jpeg";
-import g33 from "@/assets/33.jpeg";
 import g34 from "@/assets/34.jpeg";
 import g35 from "@/assets/35.jpeg";
-import g36 from "@/assets/36.jpeg";
 import g37 from "@/assets/37.jpeg";
 import g38 from "@/assets/38.jpeg";
 import g39 from "@/assets/39.jpeg";
@@ -56,22 +43,17 @@ import g45 from "@/assets/45.png";
 import g46 from "@/assets/46.jpeg";
 import g47 from "@/assets/47.jpeg";
 import g48 from "@/assets/48.webp";
-import g49 from "@/assets/49.jpeg";
 import g50 from "@/assets/50.jpeg";
 import g51 from "@/assets/51.jpeg";
 import g52 from "@/assets/52.jpeg";
-import g53 from "@/assets/53.jpeg";
 import g54 from "@/assets/54.jpeg";
 import g55 from "@/assets/55.jpeg";
-import g56 from "@/assets/56.jpeg";
 import g57 from "@/assets/57.jpeg";
 import g58 from "@/assets/58.jpeg";
 import g59 from "@/assets/59.jpeg";
-import g60 from "@/assets/60.jpeg";
 import g61 from "@/assets/61.jpeg";
 import g62 from "@/assets/62.jpeg";
 import g63 from "@/assets/63.jpeg";
-import g64 from "@/assets/64.jpeg";
 import g65 from "@/assets/65.jpeg";
 import g66 from "@/assets/66.jpeg";
 import g67 from "@/assets/67.jpeg";
@@ -86,7 +68,6 @@ import g75 from "@/assets/75.jpeg";
 import g76 from "@/assets/76.jpeg";
 import g77 from "@/assets/77.jpeg";
 import g78 from "@/assets/78.jpeg";
-import g79 from "@/assets/79.png";
 import g80 from "@/assets/80.jpeg";
 import g81 from "@/assets/81.jpeg";
 import g82 from "@/assets/82.jpeg";
@@ -103,32 +84,72 @@ const HERO_VIDEO =
   "https://res.cloudinary.com/oqd8cn54/video/upload/v1785787217/hero1_k6p321.mp4";
 
 function Hero() {
+  const preventDownload = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+  };
+
+  const preventKeyboardDownload = (e: React.KeyboardEvent) => {
+    // Prevent Ctrl/Cmd + S
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "s") {
+      e.preventDefault();
+    }
+
+    // Prevent common developer/download shortcuts
+    if (
+      (e.ctrlKey || e.metaKey) &&
+      ["u", "s", "p"].includes(e.key.toLowerCase())
+    ) {
+      e.preventDefault();
+    }
+  };
+
   return (
     <section
-  id="top"
-  className="relative h-[60vh] md:h-screen overflow-hidden bg-black"
->
-  <video
-    autoPlay
-    muted
-    loop
-    playsInline
-    preload="auto"
-    src={HERO_VIDEO}
-    className="
-      absolute
-      left-1/2
-      top-1/2
-      min-w-full
-      min-h-full
-      -translate-x-1/2
-      -translate-y-1/2
-      object-cover
-    "
-  />
-</section>
+      id="top"
+      className="relative h-[60vh] md:h-screen overflow-hidden bg-black select-none"
+      onContextMenu={preventDownload}
+      onDragStart={preventDownload}
+      onKeyDown={preventKeyboardDownload}
+      tabIndex={0}
+    >
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        src={HERO_VIDEO}
+        controls={false}
+        controlsList="nodownload noplaybackrate"
+        disablePictureInPicture
+        disableRemotePlayback
+        draggable={false}
+        onContextMenu={preventDownload}
+        onDragStart={preventDownload}
+        className="
+          absolute
+          left-1/2
+          top-1/2
+          min-w-full
+          min-h-full
+          -translate-x-1/2
+          -translate-y-1/2
+          object-cover
+          pointer-events-none
+        "
+      />
+
+      {/* Transparent protection layer */}
+      <div
+        className="absolute inset-0 z-10 select-none"
+        onContextMenu={preventDownload}
+        onDragStart={preventDownload}
+        aria-hidden="true"
+      />
+    </section>
   );
-}/* ----------------------------- Solutions ------------------------------ */
+}
+/* ----------------------------- Solutions ------------------------------ */
 const SOLUTION_LINKS = [
   { title: "Still Render", to: "/services/still-render" },
   { title: "Video Walkthrough", to: "/services/video-walkthrough" },
@@ -275,14 +296,14 @@ function Services() {
 
 /* --------------------------------- Gallery --------------------------------- */
 const GALLERY = [
-  g74, g1, g2, g79, g78, g77, g5, g6, g7, g8, g50, g10,
-  g11, g12, g13, g14, g15, g16, g17, g18, g19, g20,
-  g21, g22, g23, g24, g25, g26, g27, g28, g29, g30,
-  g31, g32, g33, g34, g35, g36, g37, g38, g39, g40,
-  g41, g43, g45, g46, g47, g48, g49, g9,
-  g51, g52, g53, g54, g55, g56, g57, g58, g59, g60,
-  g61, g62, g63, g64, g65, g66, g67, g68, g69, g70,
-  g71, g72, g73, g75, g76, g4, g3, g80,
+  g74, g1, g13, g78, g77, g5, g6, g7, g8, g50,
+  g12, g2, g14, g16, g17, g18, g19, g20,
+  g22, g23, g24, g26,
+  g32, g34, g35, g37, g38, g39, g40,
+  g41, g43, g45, g46, g47, g48, g9,
+  g51, g52, g54, g55, g57, g58, g59,
+  g61, g62, g63, g65, g66, g67, g68, g69, g70,
+  g71, g72, g73, g75, g76, g4, g80,
   g81, g82, g83,
 ];
 // Editorial pattern: repeating groups
