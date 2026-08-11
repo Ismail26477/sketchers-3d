@@ -443,6 +443,11 @@ import client50 from "@/assets/sidde.png";
 import client51 from "@/assets/shriniwasa.png";
 import client52 from "@/assets/omsatyam.png";
 import client53 from "@/assets/Vatsalya.png";
+import client54 from "@/assets/naik.png";
+import client55 from "@/assets/sha.png";
+import client56 from "@/assets/sk.png";
+import client57 from "@/assets/kala.png";
+
 
 const CLIENTS = [
   { name: "Chattarpur Farms", src: client36 },
@@ -450,6 +455,8 @@ const CLIENTS = [
   { name: "Pyramid Group", src: client38 },
   { name: "Chintamani Builders", src: client39 },
   { name: "Sivana Greens", src: client40 },
+    { name: "Kala", src: client57 },
+
   { name: "Ambika Farms", src: client41 },
   { name: "SSB Homes", src: client42 },
     { name: "LG Developers & Builders", src: client48 },
@@ -463,6 +470,10 @@ const CLIENTS = [
   { name: "Shriniwasa Builders & Developers", src: client51 },
   { name: "Om Satyam Buildcons", src: client52 },
   { name: "Vatsalya Group", src: client53 },
+  { name: "Naiknavare", src: client54 },
+  { name: "Shanika", src: client55 },
+  { name: "SK Fortune", src: client56},
+
 ];
 
 function Clients() {
