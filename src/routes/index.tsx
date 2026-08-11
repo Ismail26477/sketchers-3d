@@ -510,12 +510,12 @@ function Clients() {
 
 /* --------------------------------- Testimonials --------------------------------- */
 const TESTIMONIALS = [
-  { q: "Sketchers 3D redefined how we present unbuilt architecture. Their renders sold half our tower off-plan.", n: "Ines Marchetti", r: "VP Development, Aurelius Group", p: "https://i.pravatar.cc/160?img=47" },
-  { q: "The most cinematic architectural imagery we've commissioned. Every frame feels lived-in and true.", n: "Daniel Osei", r: "Principal Architect, Osei & Partners", p: "https://i.pravatar.cc/160?img=12" },
-  { q: "Uncommonly patient, quietly obsessive. They delivered work our marketing team can't stop reusing.", n: "Sara Lindqvist", r: "Head of Brand, Maison Ko", p: "https://i.pravatar.cc/160?img=45" },
-  { q: "A rare combination of technical mastery and artistic restraint. Zero drama, extraordinary output.", n: "Marcus Chen", r: "Director, Northwind Real Estate", p: "https://i.pravatar.cc/160?img=33" },
-  { q: "They understood the brief better than we did by the second week. That's the mark of true craft.", n: "Amelia Rousseau", r: "Design Director, Helios Studio", p: "https://i.pravatar.cc/160?img=41" },
-  { q: "Every deliverable arrived sharper than promised. A partner, not a vendor.", n: "Jonah Weiss", r: "Founder, Fieldnotes Architecture", p: "https://i.pravatar.cc/160?img=15" },
+  { q: "We needed the renders quickly for our sales launch, and the team understood exactly what we were looking for. The final images came out really well.", n: "Rahul Mehta", r: "Marketing Head, Urban Heights" },
+  { q: "The team was easy to work with and very open to feedback. We went through a few changes and they handled everything without any hassle.", n: "Priya Nair", r: "Creative Director, Studio Nine" },
+  { q: "What I liked most was the attention to small details. The interiors, lighting and overall finish looked very close to what we had in mind.", n: "Amit Sharma", r: "Director, Horizon Developers" },
+  { q: "We have worked with a few visualization teams before, but the communication here was much smoother. The final renders helped our project presentation a lot.", n: "Neha Kapoor", r: "Brand Manager, Aria Group" },
+  { q: "They took our basic references and turned them into visuals that actually matched the feel of the project. Very happy with how the work turned out.", n: "Rohan Verma", r: "Project Lead, Crestline Realty" },
+  { q: "The quality was consistent across all the views, and revisions were handled properly. We would definitely consider working with them again.", n: "Anjali Deshmukh", r: "Marketing Manager, Westmark Properties" },
 ];
 
 function Stars() {
@@ -591,12 +591,9 @@ function Testimonials() {
                       "{t.q}"
                     </blockquote>
                   </div>
-                  <figcaption className="mt-10 flex items-center gap-4 border-t border-border pt-6">
-                    <img src={t.p} alt={t.n} loading="lazy" className="h-14 w-14 rounded-full object-cover" />
-                    <div>
-                      <div className="text-sm text-foreground">{t.n}</div>
-                      <div className="text-xs text-muted-foreground">{t.r}</div>
-                    </div>
+                  <figcaption className="mt-10 border-t border-border pt-6">
+                    <div className="text-sm text-foreground">{t.n}</div>
+                    <div className="text-xs text-muted-foreground">{t.r}</div>
                   </figcaption>
                 </figure>
               </div>
