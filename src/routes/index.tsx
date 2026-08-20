@@ -81,7 +81,7 @@ export const Route = createFileRoute("/")({
 });
 
 const HERO_VIDEO =
-  "https://res.cloudinary.com/oqd8cn54/video/upload/v1785787217/hero1_k6p321.mp4";
+  "https://res.cloudinary.com/oqd8cn54/video/upload/v1786642732/hero2_v3k1xh.mp4";
 
 function Hero() {
   const preventDownload = (e: React.SyntheticEvent) => {
@@ -151,8 +151,8 @@ function Hero() {
 }
 /* ----------------------------- Solutions ------------------------------ */
 const SOLUTION_LINKS = [
-  { title: "Still Render", to: "/services/still-render" },
-  { title: "Video Walkthrough", to: "/services/video-walkthrough" },
+  { title: "CGI Renders & Animation", to: "/services/still-render" },
+  { title: "Photorealistic Walkthroughs", to: "/services/video-walkthrough" },
   { title: "VR Tours", to: "/services/vr-tours" },
   { title: "Inventory Selector Module", to: "/services/inventory-selector" },
   { title: "Interactive Scale Models", to: "/services/interactive-scale-models" },
@@ -296,14 +296,13 @@ function Services() {
 
 /* --------------------------------- Gallery --------------------------------- */
 const GALLERY = [
-  g74, g1, g13, g78, g77, g5, g6, g7, g8, g50,
-  g12, g2, g14, g16, g17, g18, g19, g20,
-  g22, g23, g24, g26,
-  g32, g34, g35, g37, g38, g39, g40,
-  g41, g43, g45, g46, g47, g48, g9,
-  g51, g52, g54, g55, g57, g58, g59,
-  g61, g62, g63, g65, g66, g67, g68, g69, g70,
-  g71, g72, g73, g75, g76, g4, g80,
+  g1, g13, g5, g6, g7, g19, g8, g50,
+  g12, g2, g18, g20,
+  g22, g23, g40,
+  g41, g43, g45, g46, g48, g9,
+  g54, g55, g59,
+  g62, g65, g69,
+  g71, g72, g75,
   g81, g82, g83,
 ];
 // Editorial pattern: repeating groups
@@ -477,36 +476,78 @@ const CLIENTS = [
 ];
 
 function Clients() {
-  const row = [...CLIENTS, ...CLIENTS];
   return (
-    <section id="clients" className="border-t border-border py-12 md:py-16">
-      <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
-        <p className="mb-10 text-center text-[11px] uppercase tracking-[0.4em] text-primary">
-          Trusted by studios &amp; developers worldwide
-        </p>
-      </div>
-      <div className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-background to-transparent md:w-32" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-background to-transparent md:w-32" />
-        <div className="marquee-child flex w-max items-center gap-1 md:gap-1 marquee-slow">
-  {row.map((c, i) => (
-    <div
-      key={i}
-      className="flex shrink-0 items-center justify-center px-1"
+    <section
+      id="clients"
+      className="border-t border-border bg-background py-10 md:py-14"
     >
-      <img
-        src={c.src}
-        alt={c.name}
-        className="h-24 md:h-28 lg:h-32 w-auto object-contain grayscale"
-      />
-    </div>
-  ))}
+      <div className="mx-auto max-w-[1500px] px-6 lg:px-10">
+        {/* Heading */}
+        <div className="mb-8 text-center md:mb-10">
+          <h2 className="font-sans text-3xl font-light uppercase tracking-[0.02em] text-foreground md:text-4xl lg:text-5xl">
+            Clients & Partners
+          </h2>
+        </div>
+
+        {/* Logo Grid */}
+        <div
+  className="
+    grid
+    grid-cols-4
+    items-center
+    justify-items-center
+    gap-x-3
+    gap-y-6
+    sm:grid-cols-4
+    md:grid-cols-4
+    lg:grid-cols-6
+    xl:grid-cols-8
+    md:gap-x-6
+    md:gap-y-7
+    lg:gap-x-8
+    lg:gap-y-8
+  "
+>
+          {CLIENTS.map((c) => (
+            <div
+  key={c.name}
+  className="
+    flex
+    h-16
+    w-full
+    items-center
+    justify-center
+    px-1
+    sm:h-20
+    md:h-24
+    lg:h-28
+  "
+>
+  <img
+    src={c.src}
+    alt={c.name}
+    loading="lazy"
+    className="
+      max-h-10
+      max-w-[75px]
+      w-auto
+      object-contain
+      grayscale
+      sm:max-h-12
+      sm:max-w-[100px]
+      md:max-h-16
+      md:max-w-[175px]
+      lg:max-h-20
+      lg:max-w-[190px]
+    "
+  />
 </div>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
-
 
 /* --------------------------------- Testimonials --------------------------------- */
 const TESTIMONIALS = [
