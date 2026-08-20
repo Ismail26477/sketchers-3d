@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo1.png";
 
 const colHeading =
   "text-[11px] uppercase tracking-[0.3em] text-white/50 mb-5";
@@ -41,8 +41,8 @@ export function Footer() {
           <div>
             <div className={colHeading}>Services</div>
             <ul className="space-y-3">
-              <li><Link to="/services/still-render" className={linkCls}>Still Render</Link></li>
-              <li><Link to="/services/video-walkthrough" className={linkCls}>Video Walkthrough</Link></li>
+              <li><Link to="/services/still-render" className={linkCls}>CGI Renders & Animations</Link></li>
+              <li><Link to="/services/video-walkthrough" className={linkCls}>Photorealistic Walkthroughs</Link></li>
               <li><Link to="/services/vr-tours" className={linkCls}>VR Tours</Link></li>
               <li><Link to="/services/inventory-selector" className={linkCls}>Inventory Selector Module</Link></li>
               <li><Link to="/services/interactive-scale-models" className={linkCls}>Interactive Scale Models</Link></li>
@@ -63,8 +63,13 @@ export function Footer() {
     </li>
 
     <li>
-      <a href="tel:+919518913547" className={linkCls}>
-        +91 95189 13547
+      <a href="tel:+918600666505" className={linkCls}>
+        +91 86006 66505
+      </a>
+    </li>
+    <li>
+      <a href="tel:+917620720321" className={linkCls}>
+        +91 76207 20321
       </a>
     </li>
 
