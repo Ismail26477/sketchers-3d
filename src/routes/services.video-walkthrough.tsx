@@ -13,7 +13,7 @@ export const Route = createFileRoute("/services/video-walkthrough")({
   component: () => (
     <ServicePage
       eyebrow="Service"
-      title="Video Walkthrough"
+      title="Photorealistic Walkthroughs"
       description="Cinematic property walkthroughs showcasing features and amenities with high-quality 3D content."
       points={[
         "Story-driven camera choreography tailored to the project.",
