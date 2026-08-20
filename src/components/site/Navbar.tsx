@@ -1,234 +1,103 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
-import { Navbar } from "@/components/site/Navbar";
-import { Footer } from "@/components/site/Footer";
-import { PageHero } from "@/components/site/PageHero";
-import g9 from "@/assets/g9.jpg";
+import { Link, useLocation } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
+import logo from "@/assets/logo1.png";
 
-export const Route = createFileRoute("/contact")({
-  component: ContactPage,
-  head: () => ({
-    meta: [
-      { title: "Contact — Sketchers 3D" },
-      {
-        name: "description",
-        content:
-          "Get in touch with Sketchers 3D for photorealistic CGI renders, walkthroughs and architectural animation.",
-      },
-      { property: "og:title", content: "Contact — Sketchers 3D" },
-      {
-        property: "og:description",
-        content: "Start a project with Sketchers 3D.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-});
+export function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
-function ContactPage() {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  useEffect(() => {
+    const updateLogoColor = () => {
+      // Home page hero
+      let hero = document.getElementById("top");
 
-  const [sent, setSent] = useState(false);
+      // Other pages — detect the first section inside main
+      if (!hero) {
+        hero = document.querySelector("main > section");
+      }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+      // If the page doesn't have a hero section,
+      // use normal scroll detection
+      if (!hero) {
+        setScrolled(window.scrollY > 30);
+        return;
+      }
 
-    const message = `New Project Enquiry
+      const heroBottom = hero.getBoundingClientRect().bottom;
 
-Name: ${form.name}
-Email: ${form.email}
+      // White logo while hero is visible
+      // Blue logo after hero has completely passed
+      setScrolled(heroBottom <= 0);
+    };
 
-Project Details:
-${form.message}`;
+    // Wait until the new page/hero is rendered
+    const timeout = setTimeout(() => {
+      updateLogoColor();
+    }, 50);
 
-    const whatsappUrl = `https://wa.me/919834067292?text=${encodeURIComponent(
-      message
-    )}`;
+    window.addEventListener("scroll", updateLogoColor, {
+      passive: true,
+    });
 
-    window.open(whatsappUrl, "_blank");
+    window.addEventListener("resize", updateLogoColor);
 
-    setSent(true);
-  };
+    return () => {
+      clearTimeout(timeout);
+      window.removeEventListener("scroll", updateLogoColor);
+      window.removeEventListener("resize", updateLogoColor);
+    };
+  }, [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Navbar />
+    <header className="fixed inset-x-0 top-0 z-50">
+      <nav className="mx-auto flex h-20 max-w-[1440px] items-center justify-between px-4 sm:h-24 sm:px-6 lg:h-24 lg:px-12">
+        {/* LOGO */}
+        <Link to="/" className="flex items-center">
+          <div className="relative h-16 w-[180px] sm:h-12 sm:w-[170px] lg:h-24 lg:w-[230px]">
+            {/* WHITE LOGO — HERO */}
+            <img
+              src={logo}
+              alt="Sketchers 3D"
+              className={`
+                absolute inset-0 h-full w-full object-contain object-left
+                transition-opacity duration-500 ease-in-out
+                ${scrolled ? "opacity-0" : "opacity-100"}
+              `}
+            />
 
-      <PageHero
-        eyebrow="Get in touch"
-        title={
-          <>
-            Let's build{" "}
-            <em className="italic">something remarkable.</em>
-          </>
-        }
-        image={g9}
-      />
-
-      <main className="py-16 md:py-20">
-        <div className="mx-auto grid max-w-[1400px] gap-16 px-6 lg:grid-cols-2 lg:px-12">
-          {/* Contact Information */}
-          <div>
-            <p className="text-[11px] uppercase tracking-[0.4em] text-primary">
-              Studio
-            </p>
-
-            <h2 className="mt-6 font-display text-3xl leading-[1.1] md:text-4xl">
-              Tell us about your project.
-            </h2>
-
-            <p className="mt-6 max-w-md text-[15px] leading-relaxed text-foreground/70">
-              Share your timeline, scope and references. Our team will respond
-              within one business day.
-            </p>
-
-            <ul className="mt-10 space-y-4 text-sm">
-              <li>
-                <span className="mr-3 text-[11px] uppercase tracking-[0.2em] text-foreground/50">
-                  Email
-                </span>
-                <a
-                  href="mailto:sketchers3dofficial@gmail.com"
-                  className="underline underline-offset-[6px] decoration-foreground/30 hover:decoration-foreground"
-                >
-                  sketchers3dofficial@gmail.com
-                </a>
-              </li>
-
-              <li>
-                <span className="mr-3 text-[11px] uppercase tracking-[0.2em] text-foreground/50">
-                  Phone
-                </span>
-                <a
-                  href="tel:+919595376600"
-                  className="underline underline-offset-[6px] decoration-foreground/30 hover:decoration-foreground"
-                >
-                  +91 95953 76600
-                </a>
-              </li>
-
-              <li>
-                <span className="mr-3 text-[11px] uppercase tracking-[0.2em] text-foreground/50">
-                  Phone
-                </span>
-                <a
-                  href="tel:+918600666505"
-                  className="underline underline-offset-[6px] decoration-foreground/30 hover:decoration-foreground"
-                >
-                  +91 86006 66505
-                </a>
-              </li>
-
-              <li>
-                <span className="mr-3 text-[11px] uppercase tracking-[0.2em] text-foreground/50">
-                  Phone
-                </span>
-                <a
-                  href="tel:+917620720321"
-                  className="underline underline-offset-[6px] decoration-foreground/30 hover:decoration-foreground"
-                >
-                  +91 76207 20321
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="space-y-8">
-            {/* Name */}
-            <div>
-              <label className="text-[11px] uppercase tracking-[0.3em] text-foreground/50">
-                Name
-              </label>
-
-              <input
-                type="text"
-                required
-                value={form.name}
-                onChange={(e) =>
-                  setForm({
-                    ...form,
-                    name: e.target.value,
-                  })
-                }
-                className="mt-2 w-full border-0 border-b border-foreground/20 bg-transparent pb-3 text-sm focus:border-foreground focus:outline-none"
-              />
-            </div>
-
-            {/* Email */}
-            <div>
-              <label className="text-[11px] uppercase tracking-[0.3em] text-foreground/50">
-                Email
-              </label>
-
-              <input
-                type="email"
-                required
-                value={form.email}
-                onChange={(e) =>
-                  setForm({
-                    ...form,
-                    email: e.target.value,
-                  })
-                }
-                className="mt-2 w-full border-0 border-b border-foreground/20 bg-transparent pb-3 text-sm focus:border-foreground focus:outline-none"
-              />
-            </div>
-
-            {/* Project Details */}
-            <div>
-              <label className="text-[11px] uppercase tracking-[0.3em] text-foreground/50">
-                Project details
-              </label>
-
-              <textarea
-                required
-                rows={5}
-                value={form.message}
-                onChange={(e) =>
-                  setForm({
-                    ...form,
-                    message: e.target.value,
-                  })
-                }
-                className="mt-2 w-full resize-none border-0 border-b border-foreground/20 bg-transparent pb-3 text-sm focus:border-foreground focus:outline-none"
-              />
-            </div>
-
-            {/* Submit Button */}
-            <button
-              type="submit"
-              className="inline-block bg-[#111111] px-10 py-4 text-[11px] uppercase tracking-[0.3em] text-white transition-colors hover:bg-primary"
-            >
-              {sent ? "Opening WhatsApp..." : "Send Enquiry"}
-            </button>
-          </form>
-        </div>
-
-        {/* Google Maps */}
-        <div className="mx-auto mt-20 max-w-[1400px] px-6 lg:px-12">
-          <p className="text-[11px] uppercase tracking-[0.4em] text-primary">
-            Find us
-          </p>
-
-          <div className="mt-6 aspect-[16/9] w-full overflow-hidden border border-border">
-            <iframe
-              title="Sketchers 3D location"
-              src="https://www.google.com/maps?q=Nagpur,Maharashtra,India&output=embed"
-              className="h-full w-full"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
+            {/* BLUE LOGO — AFTER HERO */}
+            <img
+              src={logo}
+              alt="Sketchers 3D"
+              className={`
+                absolute inset-0 h-full w-full object-contain object-left
+                transition-opacity duration-500 ease-in-out
+                ${scrolled ? "opacity-100" : "opacity-0"}
+              `}
+              style={{
+                filter:
+                  "brightness(0) saturate(100%) invert(32%) sepia(98%) saturate(1847%) hue-rotate(204deg) brightness(92%) contrast(96%)",
+              }}
             />
           </div>
-        </div>
-      </main>
+        </Link>
 
-      <Footer />
-    </div>
+        {/* CONTACT */}
+        <Link
+          to="/contact"
+          className="
+            border border-black bg-black
+            px-3 py-2
+            text-[13px] font-medium uppercase tracking-[0.15em] text-white
+            transition-all duration-300
+            hover:bg-white hover:text-black
+            sm:px-6 sm:py-2.5 sm:text-[10px]
+            lg:px-8 lg:py-3 lg:text-[11px] lg:tracking-[0.25em]
+          "
+        >
+          Contact
+        </Link>
+      </nav>
+    </header>
   );
 }
