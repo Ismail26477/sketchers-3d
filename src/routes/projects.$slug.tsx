@@ -59,7 +59,7 @@ function ProjectPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar solid />
-      <main className="pt-24">
+      <main>
         {/* Hero image */}
         <section className="relative">
           <div className="relative h-[70vh] w-full overflow-hidden md:h-[85vh]">
@@ -78,6 +78,9 @@ function ProjectPage() {
               </h1>
             </div>
             <div className="md:col-span-5">
+              {project.description && (
+                <p className="mb-10 max-w-md text-base leading-relaxed text-foreground/70">{project.description}</p>
+              )}
               <dl className="grid grid-cols-2 gap-8 border-t border-border pt-8 text-sm">
                 <div>
                   <dt className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Location</dt>

@@ -28,6 +28,7 @@ export type Project = {
   location: string;
   typology: string;
   client: string;
+  description?: string;
   cover: string;
   images: string[];
 };
@@ -37,10 +38,10 @@ function pick(start: number, count = 16): string[] {
 }
 
 export const PROJECTS: Project[] = [
-  { slug: "serenity-tower", title: "Serenity Tower", year: "2024", location: "Dubai, UAE", typology: "Residential High-Rise", client: "Aurelius Group", cover: g1, images: pick(0, 18) },
-  { slug: "azure-residences", title: "Azure Residences", year: "2024", location: "Lisbon, Portugal", typology: "Coastal Residential", client: "Maison Ko", cover: g2, images: pick(2, 17) },
-  { slug: "vertex-pavilion", title: "Vertex Pavilion", year: "2023", location: "Kyoto, Japan", typology: "Cultural Pavilion", client: "Helios Studio", cover: g3, images: pick(4, 16) },
-  { slug: "meridian-heights", title: "Meridian Heights", year: "2024", location: "New York, USA", typology: "Mixed-Use Tower", client: "Northwind", cover: g4, images: pick(6, 18) },
+  { slug: "serenity-tower", title: "Serenity Tower", year: "2024", location: "Dubai, UAE", typology: "Residential High-Rise", client: "Aurelius Group", description: "A vertical study in calm, proportion and panoramic city light.", cover: g1, images: pick(0, 18) },
+  { slug: "azure-residences", title: "Azure Residences", year: "2024", location: "Lisbon, Portugal", typology: "Coastal Residential", client: "Maison Ko", description: "A coastal residence composed around shade, breeze and long views to the Atlantic.", cover: g2, images: pick(2, 17) },
+  { slug: "vertex-pavilion", title: "Vertex Pavilion", year: "2023", location: "Kyoto, Japan", typology: "Cultural Pavilion", client: "Helios Studio", description: "A quiet civic pavilion where a faceted roof turns movement into an experience.", cover: g3, images: pick(4, 16) },
+  { slug: "meridian-heights", title: "Meridian Heights", year: "2024", location: "New York, USA", typology: "Mixed-Use Tower", client: "Northwind", description: "A mixed-use landmark balancing density, public life and a new urban silhouette.", cover: g4, images: pick(6, 18) },
   { slug: "kai-loft", title: "Kai Loft", year: "2023", location: "Copenhagen, Denmark", typology: "Interior Residential", client: "Kai & Co", cover: g5, images: pick(8, 15) },
   { slug: "helios-atrium", title: "Helios Atrium", year: "2024", location: "Marrakech, Morocco", typology: "Hospitality", client: "Fieldnotes", cover: g6, images: pick(10, 17) },
   { slug: "northwind-marina", title: "Northwind Marina", year: "2023", location: "Oslo, Norway", typology: "Master Plan", client: "Northwind", cover: g7, images: pick(12, 18) },
