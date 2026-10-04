@@ -109,13 +109,12 @@ function ProjectPage() {
             {project.images.map((src: string, i: number) => {
               const mod = i % 7;
               const cls =
-                mod === 0 ? "col-span-12 aspect-[16/9]"
-                : mod === 1 ? "col-span-12 md:col-span-7 aspect-[4/3]"
-                : mod === 2 ? "col-span-12 md:col-span-5 aspect-[3/4]"
-                : mod === 3 ? "col-span-12 md:col-span-5 aspect-[3/4]"
-                : mod === 4 ? "col-span-12 md:col-span-7 aspect-[4/3]"
-                : mod === 5 ? "col-span-6 aspect-[4/5]"
-                : "col-span-6 aspect-[4/5]";
+                mod === 0 ? "col-span-12"
+                : mod === 1 ? "col-span-12 md:col-span-7"
+                : mod === 2 ? "col-span-12 md:col-span-5"
+                : mod === 3 ? "col-span-12 md:col-span-5"
+                : mod === 4 ? "col-span-12 md:col-span-7"
+                : "col-span-6";
               return (
                 <motion.button
                   key={i}
@@ -124,7 +123,7 @@ function ProjectPage() {
                   viewport={{ once: true, margin: "-60px" }}
                   transition={{ duration: 0.7 }}
                   onClick={() => setIndex(i)}
-                  className={`group relative overflow-hidden rounded-sm bg-secondary ${cls}`}
+                  className={`group relative h-[clamp(18rem,32vw,34rem)] overflow-hidden rounded-sm bg-secondary ${cls}`}
                   aria-label={`Open image ${i + 1}`}
                 >
                   <img
