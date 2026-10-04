@@ -105,7 +105,7 @@ function ProjectPage() {
 
         {/* Editorial gallery — mixed portrait/landscape */}
         <section className="mx-auto max-w-[1400px] px-6 pb-24 lg:px-12 lg:pb-32">
-          <div className="grid grid-cols-12 gap-6 md:gap-10">
+          <div className="grid grid-cols-12 gap-[1%]">
             {project.images.map((src: string, i: number) => {
               const mod = i % 7;
               const cls =
