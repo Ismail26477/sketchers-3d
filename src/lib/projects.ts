@@ -53,6 +53,8 @@ const gaganAvenciaGallery = [
   "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kitchen.jpg-5cQL53PZbjVt76YReMOteIlgBNcO6S.jpeg",
   "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Living-%26-Dining-Room.jpg-whtgdc29wvWNOvgMDLyL3PRv78Vppu.jpeg",
   "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Master_Bedroom_01.jpg-m73KOEfA17ZhwVNgbbhcF1wUlsVf4a.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Master-Bedroo-cam-02_v1.jpg-PxL9IEqQ0U3st3uOVQb5BhnTN25fJm.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Party-hall.jpg-uHWeyFZRVjZovTF2Q31PcMbemQZbvp.jpeg",
 ];
 
 export const PROJECTS: Project[] = [
