@@ -1,26 +1,3 @@
-import g1 from "@/assets/g1.jpg";
-import g2 from "@/assets/g2.jpg";
-import g3 from "@/assets/g3.jpg";
-import g4 from "@/assets/g4.jpg";
-import g5 from "@/assets/g5.jpg";
-import g6 from "@/assets/g6.jpg";
-import g7 from "@/assets/g7.jpg";
-import g8 from "@/assets/g8.jpg";
-import g9 from "@/assets/g9.jpg";
-import g10 from "@/assets/g10.jpg";
-import g11 from "@/assets/g11.jpg";
-import g12 from "@/assets/g12.jpg";
-import g13 from "@/assets/g13.jpg";
-import g14 from "@/assets/g14.jpg";
-import g15 from "@/assets/g15.jpg";
-import g16 from "@/assets/g16.jpg";
-import g17 from "@/assets/g17.jpg";
-import g18 from "@/assets/g18.jpg";
-import g19 from "@/assets/g19.jpg";
-import g20 from "@/assets/g20.jpg";
-
-const ALL = [g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20];
-
 export type Project = {
   slug: string;
   title: string;
@@ -28,25 +5,81 @@ export type Project = {
   location: string;
   typology: string;
   client: string;
+  description?: string;
   cover: string;
   images: string[];
 };
 
-function pick(start: number, count = 16): string[] {
-  return Array.from({ length: count }, (_, i) => ALL[(start + i) % ALL.length]);
-}
+const gallery = [
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/View-02-%281%29.jpg-ADckxVmTZs9akCVya3u9VK1PuY9t6i.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/View-03.jpg-VKb02CztYEzwrfFXRkwrEXs6ZgQPq5.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Reception.jpg-khHyBpCpGzYABoIsaYLuompSz21YJZ.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Banquet-Hall.jpg%20%281%29-HXd1CqXKQuKKGhzpWZimZTfS20CSM6.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cam-12-%282%29.jpg-gqWW8XBFvpiw10jD3d22mFKc3wtaFz.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Clubhouse-Entry-Gate.jpg-A5IvBa9lnOoE4jaxPJAoFzAvGDsiD6.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Entry-Gate.jpg-rWjMF7bj2urJuDGbYTWVDIdc240uAf.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gym.jpg-RqDRRpiJMd73w9psh5V2KBBtqdC6yF.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kids.jpg-iE6Ha2aGa5eJY2P85gve36gokq8CTp.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kids-cam.jpg-k7vpdLO6O5Zwd5t0qhXWuqcvdgSVvc.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Lotus-Water-Feature.jpg-IBTQvJYrqyoLzGerClFOetaK1TiBUf.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Multi-copy.jpg-1FdWb3mv6hoHhPHTUOcbJbWwMB6LeY.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Night-copy.jpg-py1jhFBY1xxt1P2KNQs01UbC8E2NsI.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pickleball-Court_5k.jpg-OWMSEJbAt3AyGYNknDnUarzmLhWaBr.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Pool-Render-Day.jpg-1JPGyRQhC8jHcrku9FbHZjQDvazbxg.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Squash-Court.jpg-rVAxuXkAj8cjz1QmKhsloDP2A44a7C.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/View-06.jpg-jw3h6I52Tcqrv5tghzDfDkT1uq7bE0.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/View-10.jpg-ZTCPyCjQWc0P0QPzVSF3sEV8KgaBPN.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/view-15.jpg-D0mjHToGNN1IwUn3IZ8A1j3y6VwRN1.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Yoga.jpg-o8eHZY7fBoJWx01BI3J0PqLPwC9PtY.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Zumba.jpg-IkKMCwH7dmEQ9SQec8V1rH4A3l1qGA.jpeg",
+];
+
+const gaganAvenciaGallery = [
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/GAGAN_avencia_cam01.jpg-dhHEXXgtAdDRbnY72hFtBT5HWJbYB1.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/GAGAN_avencia_cam26.jpg-Ibf6GII9xkbJY2h3HOSO40MGG22by3.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/GAGAN_avencia_cam42.jpg-EY8A4PqIHNviiuq8TPrwOsmWppQ4Jr.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/GAGAN_avencia_Day-Aerial.jpg-9ovzhjV1ba26Zp6Lw2xTAEbumkPBsz.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/GAGAN_avencia_Elevation_cam_Day.jpg-xHH6iKoyoS8xr7CoHSpRxZfFjMufw2.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/GAGAN_avencia_Elevation_cam_night.jpg-wOrgw8zuxo2Qde2WlOGCAICfrPS4QA.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/GAGAN_avencia_Night-Aerial.jpg-baUSJ6RVKSFY3qvFfxdFFPvYHR7Lwc.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gagna_Avencia_cam03_final.jpg-cYyzVfPIhxAGEYAceFZYPDY7whJnrJ.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gagna_Avencia_Pool_cam.jpg-cMxToklOrxyJGf8VmlWtGVhEo7ZL9d.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/gate.jpg-COaLJlWRgmCMjokxMAC1c8w8NHaLPX.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Bedroom_01.jpg-Rs9Z9JweyeyDYU1s09YJuKOcERIJaH.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/GuestBedroom.jpg-JJEHdRaYF2dAzJf6rcOG7dQkXL15mn.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/gym.jpg%20%281%29-7f87nmLCrHG89Lajmv3MC6QIM01LFh.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kids-Room.jpg-35ner6t3iOju4AgOnHc7lkpt1yLTd3.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kids-Room-Cam-02.jpg-GwfyMIz5rH2R6n7onCKuhSvlfef8HO.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kitchen.jpg-5cQL53PZbjVt76YReMOteIlgBNcO6S.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Living-%26-Dining-Room.jpg-whtgdc29wvWNOvgMDLyL3PRv78Vppu.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Master_Bedroom_01.jpg-m73KOEfA17ZhwVNgbbhcF1wUlsVf4a.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Master-Bedroo-cam-02_v1.jpg-PxL9IEqQ0U3st3uOVQb5BhnTN25fJm.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Party-hall.jpg-uHWeyFZRVjZovTF2Q31PcMbemQZbvp.jpeg",
+];
 
 export const PROJECTS: Project[] = [
-  { slug: "serenity-tower", title: "Serenity Tower", year: "2024", location: "Dubai, UAE", typology: "Residential High-Rise", client: "Aurelius Group", cover: g1, images: pick(0, 18) },
-  { slug: "azure-residences", title: "Azure Residences", year: "2024", location: "Lisbon, Portugal", typology: "Coastal Residential", client: "Maison Ko", cover: g2, images: pick(2, 17) },
-  { slug: "vertex-pavilion", title: "Vertex Pavilion", year: "2023", location: "Kyoto, Japan", typology: "Cultural Pavilion", client: "Helios Studio", cover: g3, images: pick(4, 16) },
-  { slug: "meridian-heights", title: "Meridian Heights", year: "2024", location: "New York, USA", typology: "Mixed-Use Tower", client: "Northwind", cover: g4, images: pick(6, 18) },
-  { slug: "kai-loft", title: "Kai Loft", year: "2023", location: "Copenhagen, Denmark", typology: "Interior Residential", client: "Kai & Co", cover: g5, images: pick(8, 15) },
-  { slug: "helios-atrium", title: "Helios Atrium", year: "2024", location: "Marrakech, Morocco", typology: "Hospitality", client: "Fieldnotes", cover: g6, images: pick(10, 17) },
-  { slug: "northwind-marina", title: "Northwind Marina", year: "2023", location: "Oslo, Norway", typology: "Master Plan", client: "Northwind", cover: g7, images: pick(12, 18) },
-  { slug: "volta-cultural", title: "Volta Cultural Centre", year: "2024", location: "Barcelona, Spain", typology: "Civic & Cultural", client: "Volta", cover: g8, images: pick(1, 16) },
-  { slug: "obscura-retreat", title: "Obscura Retreat", year: "2023", location: "Reykjavík, Iceland", typology: "Boutique Retreat", client: "Obscura", cover: g9, images: pick(3, 17) },
-  { slug: "parallel-workspace", title: "Parallel Workspace", year: "2024", location: "Berlin, Germany", typology: "Commercial Interior", client: "Parallel", cover: g10, images: pick(5, 15) },
+  {
+    slug: "mahaakshmi-nagar-49-ayana",
+    title: "Mahaakshmi Nagar 49 Ayana",
+    year: "2024",
+    location: "India",
+    typology: "Residential Clubhouse & Landscape",
+    client: "Mahaakshmi Nagar 49 Ayana",
+    description: "A richly landscaped residential community imagined as a complete lifestyle destination, with a welcoming clubhouse, wellness spaces, courts, gardens and gathering places.",
+    cover: gallery[0],
+    images: gallery,
+  },
+  {
+    slug: "gagan-developers-gagan-avencia",
+    title: "Gagan Developers — Gagan Avencia",
+    year: "2024",
+    location: "Pune, India",
+    typology: "Residential Architecture & Interiors",
+    client: "Gagan Developers",
+    description: "A complete visual story for Gagan Avencia, from its landscaped rooftop amenities and pool to the tower elevations, arrival sequence and warm contemporary interiors.",
+    cover: gaganAvenciaGallery[0],
+    images: gaganAvenciaGallery,
+  },
 ];
 
 export function getProject(slug: string): Project | undefined {
