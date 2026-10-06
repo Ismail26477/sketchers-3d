@@ -31,6 +31,7 @@ const gallery = [
   "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/View-10.jpg-ZTCPyCjQWc0P0QPzVSF3sEV8KgaBPN.jpeg",
   "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/view-15.jpg-D0mjHToGNN1IwUn3IZ8A1j3y6VwRN1.jpeg",
   "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Yoga.jpg-o8eHZY7fBoJWx01BI3J0PqLPwC9PtY.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Zumba.jpg-IkKMCwH7dmEQ9SQec8V1rH4A3l1qGA.jpeg",
 ];
 
 export const PROJECTS: Project[] = [
