@@ -34,6 +34,27 @@ const gallery = [
   "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Zumba.jpg-IkKMCwH7dmEQ9SQec8V1rH4A3l1qGA.jpeg",
 ];
 
+const gaganAvenciaGallery = [
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/GAGAN_avencia_cam01.jpg-dhHEXXgtAdDRbnY72hFtBT5HWJbYB1.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/GAGAN_avencia_cam26.jpg-Ibf6GII9xkbJY2h3HOSO40MGG22by3.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/GAGAN_avencia_cam42.jpg-EY8A4PqIHNviiuq8TPrwOsmWppQ4Jr.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/GAGAN_avencia_Day-Aerial.jpg-9ovzhjV1ba26Zp6Lw2xTAEbumkPBsz.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/GAGAN_avencia_Elevation_cam_Day.jpg-xHH6iKoyoS8xr7CoHSpRxZfFjMufw2.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/GAGAN_avencia_Elevation_cam_night.jpg-wOrgw8zuxo2Qde2WlOGCAICfrPS4QA.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/GAGAN_avencia_Night-Aerial.jpg-baUSJ6RVKSFY3qvFfxdFFPvYHR7Lwc.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gagna_Avencia_cam03_final.jpg-cYyzVfPIhxAGEYAceFZYPDY7whJnrJ.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gagna_Avencia_Pool_cam.jpg-cMxToklOrxyJGf8VmlWtGVhEo7ZL9d.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/gate.jpg-COaLJlWRgmCMjokxMAC1c8w8NHaLPX.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Bedroom_01.jpg-Rs9Z9JweyeyDYU1s09YJuKOcERIJaH.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/GuestBedroom.jpg-JJEHdRaYF2dAzJf6rcOG7dQkXL15mn.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/gym.jpg%20%281%29-7f87nmLCrHG89Lajmv3MC6QIM01LFh.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kids-Room.jpg-35ner6t3iOju4AgOnHc7lkpt1yLTd3.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kids-Room-Cam-02.jpg-GwfyMIz5rH2R6n7onCKuhSvlfef8HO.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kitchen.jpg-5cQL53PZbjVt76YReMOteIlgBNcO6S.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Living-%26-Dining-Room.jpg-whtgdc29wvWNOvgMDLyL3PRv78Vppu.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Master_Bedroom_01.jpg-m73KOEfA17ZhwVNgbbhcF1wUlsVf4a.jpeg",
+];
+
 export const PROJECTS: Project[] = [
   {
     slug: "mahaakshmi-nagar-49-ayana",
@@ -45,6 +66,17 @@ export const PROJECTS: Project[] = [
     description: "A richly landscaped residential community imagined as a complete lifestyle destination, with a welcoming clubhouse, wellness spaces, courts, gardens and gathering places.",
     cover: gallery[0],
     images: gallery,
+  },
+  {
+    slug: "gagan-developers-gagan-avencia",
+    title: "Gagan Developers — Gagan Avencia",
+    year: "2024",
+    location: "Pune, India",
+    typology: "Residential Architecture & Interiors",
+    client: "Gagan Developers",
+    description: "A complete visual story for Gagan Avencia, from its landscaped rooftop amenities and pool to the tower elevations, arrival sequence and warm contemporary interiors.",
+    cover: gaganAvenciaGallery[0],
+    images: gaganAvenciaGallery,
   },
 ];
 
