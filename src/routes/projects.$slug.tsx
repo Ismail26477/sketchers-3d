@@ -138,23 +138,24 @@ function ProjectPage() {
           </div>
         </section>
 
-        {/* Next project */}
-        <section className="border-t border-border">
-          <Link
-            to="/projects/$slug"
-            params={{ slug: next.slug }}
-            className="group relative block h-[50vh] w-full overflow-hidden"
-          >
-            <img src={next.cover} alt={next.title} className="h-full w-full object-cover transition-transform duration-[1600ms] ease-out group-hover:scale-[1.05]" />
-            <div className="absolute inset-0 bg-black/30" />
-            <div className="absolute inset-0 flex items-center justify-center text-center text-white">
-              <div>
-                <p className="text-[11px] uppercase tracking-[0.4em] text-white/70">Next Project</p>
-                <h3 className="mt-3 font-display text-4xl md:text-6xl">{next.title}</h3>
+        {PROJECTS.length > 1 && (
+          <section className="border-t border-border">
+            <Link
+              to="/projects/$slug"
+              params={{ slug: next.slug }}
+              className="group relative block h-[50vh] w-full overflow-hidden"
+            >
+              <img src={next.cover} alt={next.title} className="h-full w-full object-cover transition-transform duration-[1600ms] ease-out group-hover:scale-[1.05]" />
+              <div className="absolute inset-0 bg-black/30" />
+              <div className="absolute inset-0 flex items-center justify-center text-center text-white">
+                <div>
+                  <p className="text-[11px] uppercase tracking-[0.4em] text-white/70">Next Project</p>
+                  <h3 className="mt-3 font-display text-4xl md:text-6xl">{next.title}</h3>
+                </div>
               </div>
-            </div>
-          </Link>
-        </section>
+            </Link>
+          </section>
+        )}
       </main>
       <Footer />
 

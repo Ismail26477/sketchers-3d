@@ -5,7 +5,6 @@ import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { PageHero } from "@/components/site/PageHero";
 import { PROJECTS } from "@/lib/projects";
-import g5 from "@/assets/g5.jpg";
 
 export const Route = createFileRoute("/projects/")({
   head: () => ({
@@ -26,7 +25,7 @@ function ProjectsPage() {
       <PageHero
         eyebrow="Selected Work"
         title={<>Projects, <em className="italic">an archive.</em></>}
-        image={g5}
+        image={PROJECTS[0].cover}
       />
       <main>
         <section className="mx-auto max-w-[1400px] px-6 pb-16 pt-24 lg:px-12 lg:pb-24 lg:pt-32">
