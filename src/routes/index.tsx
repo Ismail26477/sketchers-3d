@@ -334,9 +334,9 @@ function Gallery() {
   const [index, setIndex] = useState(-1);
   const items = buildRows(GALLERY.length);
   return (
-    <section id="gallery" className="py-4 md:py-6">
-      <div className="px-1 md:px-2">
-        <div className="grid grid-cols-1 gap-1 md:grid-cols-12 md:gap-1">
+    <section id="gallery" className="py-0">
+      <div className="px-0">
+        <div className="grid grid-cols-1 gap-0 md:grid-cols-12 md:gap-0">
           {items.map((it, i) => {
             const src = GALLERY[it.indices[0]];
             return (
