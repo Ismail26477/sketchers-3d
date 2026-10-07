@@ -305,19 +305,15 @@ const GALLERY = [
   g71, g72, g75,
   g81, g82, g83,
 ];
-// Editorial pattern: repeating groups
-// Group A: 3 across (equal)
-// Group B: 2 across (equal, larger)
-// Group C: 1 full-width
-// Group D: 3 across with middle wider (5-col: 1,3,1)
-type Row = { cols: string; heights: string[] };
+// Editorial pattern shared with project detail pages: full-width hero,
+// then alternating wide and narrow image pairs.
 function buildRows(total: number): { indices: number[]; span: string; height: string }[] {
   const pattern: { count: number; spans: string[]; height: string }[] = [
-    { count: 3, spans: ["md:col-span-4", "md:col-span-4", "md:col-span-4"], height: "h-[62vw] md:h-[24vw]" },
-    { count: 2, spans: ["md:col-span-7", "md:col-span-5"], height: "h-[72vw] md:h-[30vw]" },
-    { count: 1, spans: ["md:col-span-12"], height: "h-[80vw] md:h-[42vw]" },
-    { count: 3, spans: ["md:col-span-3", "md:col-span-6", "md:col-span-3"], height: "h-[62vw] md:h-[26vw]" },
-    { count: 2, spans: ["md:col-span-5", "md:col-span-7"], height: "h-[72vw] md:h-[30vw]" },
+    { count: 1, spans: ["md:col-span-12"], height: "h-[70vw] md:h-[42vw]" },
+    { count: 2, spans: ["md:col-span-7", "md:col-span-5"], height: "h-[72vw] md:h-[32vw]" },
+    { count: 2, spans: ["md:col-span-5", "md:col-span-7"], height: "h-[72vw] md:h-[32vw]" },
+    { count: 2, spans: ["md:col-span-7", "md:col-span-5"], height: "h-[72vw] md:h-[32vw]" },
+    { count: 2, spans: ["md:col-span-5", "md:col-span-7"], height: "h-[72vw] md:h-[32vw]" },
   ];
   const out: { indices: number[]; span: string; height: string }[] = [];
   let i = 0;
