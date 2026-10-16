@@ -156,14 +156,14 @@ function ProjectPage() {
           role="dialog"
           aria-modal="true"
           aria-label={`Image ${index + 1} of ${project.images.length}`}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4 md:p-10"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#f8f7f5]/90 p-4 backdrop-blur-md md:p-8"
           onClick={() => setIndex(-1)}
         >
           <button
             type="button"
             onClick={() => setIndex(-1)}
             aria-label="Close image viewer"
-            className="absolute right-4 top-4 z-10 flex h-11 w-11 items-center justify-center text-3xl text-white/80 transition-colors hover:text-white"
+            className="absolute right-4 top-4 z-10 flex h-11 w-11 items-center justify-center text-3xl text-foreground/60 transition-colors hover:text-foreground"
           >
             <span aria-hidden="true">×</span>
           </button>
@@ -174,14 +174,14 @@ function ProjectPage() {
               setIndex((index - 1 + project.images.length) % project.images.length);
             }}
             aria-label="Previous image"
-            className="absolute left-2 z-10 flex h-12 w-12 items-center justify-center text-4xl text-white/80 transition-colors hover:text-white md:left-6"
+            className="absolute left-2 z-10 flex h-12 w-12 items-center justify-center text-4xl text-foreground/60 transition-colors hover:text-foreground md:left-6"
           >
             <span aria-hidden="true">‹</span>
           </button>
           <img
             src={project.images[index]}
             alt={`${project.title} — image ${index + 1}`}
-            className="max-h-full max-w-full object-contain"
+            className="max-h-[calc(100vh-2rem)] max-w-[calc(100vw-2rem)] object-contain shadow-[0_24px_70px_rgba(17,17,17,0.18)] md:max-h-[calc(100vh-4rem)] md:max-w-[calc(100vw-8rem)]"
             onClick={(event) => event.stopPropagation()}
           />
           <button
@@ -191,7 +191,7 @@ function ProjectPage() {
               setIndex((index + 1) % project.images.length);
             }}
             aria-label="Next image"
-            className="absolute right-2 z-10 flex h-12 w-12 items-center justify-center text-4xl text-white/80 transition-colors hover:text-white md:right-6"
+            className="absolute right-2 z-10 flex h-12 w-12 items-center justify-center text-4xl text-foreground/60 transition-colors hover:text-foreground md:right-6"
           >
             <span aria-hidden="true">›</span>
           </button>
