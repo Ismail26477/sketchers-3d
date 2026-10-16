@@ -83,20 +83,16 @@ function ProjectPage() {
               )}
               <dl className="grid grid-cols-2 gap-8 border-t border-border pt-8 text-sm">
                 <div>
-                  <dt className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Location</dt>
-                  <dd className="mt-2 text-foreground/90">{project.location}</dd>
-                </div>
-                <div>
-                  <dt className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Year</dt>
-                  <dd className="mt-2 text-foreground/90">{project.year}</dd>
-                </div>
-                <div>
                   <dt className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Client</dt>
                   <dd className="mt-2 text-foreground/90">{project.client}</dd>
                 </div>
                 <div>
-                  <dt className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Discipline</dt>
-                  <dd className="mt-2 text-foreground/90">Visualization</dd>
+                  <dt className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Architecture</dt>
+                  <dd className="mt-2 text-foreground/90">{project.typology}</dd>
+                </div>
+                <div>
+                  <dt className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Location</dt>
+                  <dd className="mt-2 text-foreground/90">{project.location}</dd>
                 </div>
               </dl>
             </div>
