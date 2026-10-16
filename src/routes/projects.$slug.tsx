@@ -96,8 +96,8 @@ function ProjectPage() {
         </section>
 
         {/* Editorial gallery — mixed portrait/landscape */}
-        <section className="mx-auto max-w-[1400px] p-[0.5%]">
-          <div className="grid grid-cols-12 gap-[0.5%]">
+        <section className="relative z-0 mx-auto max-w-[1400px] px-[0.5%] pb-10 pt-[0.5%]">
+          <div className="grid grid-cols-12 gap-2 md:gap-3">
             {project.images.map((src: string, i: number) => {
               const mod = i % 7;
               const cls =
@@ -131,7 +131,7 @@ function ProjectPage() {
         </section>
 
         {PROJECTS.length > 1 && (
-          <section className="border-t border-border">
+          <section className="relative z-10 border-t border-border bg-background pt-2">
             <Link
               to="/projects/$slug"
               params={{ slug: next.slug }}
