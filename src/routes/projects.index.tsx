@@ -64,7 +64,6 @@ function ProjectsPage() {
                     <h3 className="font-display text-2xl">{project.title}</h3>
                     <p className="mt-2 text-[11px] uppercase tracking-[0.22em] text-muted-foreground">{project.typology} · {project.location}</p>
                   </div>
-                  <span className="pt-1 text-xs text-muted-foreground">{project.year}</span>
                 </div>
               </Link>
             </motion.article>
