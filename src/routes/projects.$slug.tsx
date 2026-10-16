@@ -1,10 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Lightbox from "yet-another-react-lightbox";
-import Zoom from "yet-another-react-lightbox/plugins/zoom";
-import "yet-another-react-lightbox/styles.css";
-
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { getProject, PROJECTS, type Project } from "@/lib/projects";
@@ -155,21 +151,52 @@ function ProjectPage() {
       </main>
       <Footer />
 
-      <Lightbox
-        open={index >= 0}
-        index={index}
-        close={() => setIndex(-1)}
-        slides={project.images.map((src: string) => ({ src }))}
-        plugins={[Zoom]}
-        animation={{ fade: 400, swipe: 400 }}
-        controller={{ closeOnBackdropClick: true }}
-        carousel={{ finite: false }}
-        zoom={{ maxZoomPixelRatio: 3, scrollToZoom: true }}
-        styles={{
-          container: { backgroundColor: "rgba(10, 10, 10, 0.96)", backdropFilter: "blur(20px)" },
-          slide: { padding: "5%" },
-        }}
-      />
+      {index >= 0 && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Image ${index + 1} of ${project.images.length}`}
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4 md:p-10"
+          onClick={() => setIndex(-1)}
+        >
+          <button
+            type="button"
+            onClick={() => setIndex(-1)}
+            aria-label="Close image viewer"
+            className="absolute right-4 top-4 z-10 flex h-11 w-11 items-center justify-center text-3xl text-white/80 transition-colors hover:text-white"
+          >
+            <span aria-hidden="true">×</span>
+          </button>
+          <button
+            type="button"
+            onClick={(event) => {
+              event.stopPropagation();
+              setIndex((index - 1 + project.images.length) % project.images.length);
+            }}
+            aria-label="Previous image"
+            className="absolute left-2 z-10 flex h-12 w-12 items-center justify-center text-4xl text-white/80 transition-colors hover:text-white md:left-6"
+          >
+            <span aria-hidden="true">‹</span>
+          </button>
+          <img
+            src={project.images[index]}
+            alt={`${project.title} — image ${index + 1}`}
+            className="max-h-full max-w-full object-contain"
+            onClick={(event) => event.stopPropagation()}
+          />
+          <button
+            type="button"
+            onClick={(event) => {
+              event.stopPropagation();
+              setIndex((index + 1) % project.images.length);
+            }}
+            aria-label="Next image"
+            className="absolute right-2 z-10 flex h-12 w-12 items-center justify-center text-4xl text-white/80 transition-colors hover:text-white md:right-6"
+          >
+            <span aria-hidden="true">›</span>
+          </button>
+        </div>
+      )}
     </div>
   );
 }
