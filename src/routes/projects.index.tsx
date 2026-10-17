@@ -25,7 +25,7 @@ function ProjectsPage() {
       <PageHero
         eyebrow="Selected Work"
         title={<>Projects, <em className="italic">an archive.</em></>}
-        image={PROJECTS[0].cover}
+        image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image.png-NAeyrBMpvTstlCBy1yPVXD28sO60vU.jpeg"
       />
       <main>
         <section className="mx-auto max-w-[1400px] px-6 pb-16 pt-24 lg:px-12 lg:pb-24 lg:pt-32">
