@@ -80,8 +80,8 @@ export const Route = createFileRoute("/")({
   component: LandingPage,
 });
 
-const HERO_IMAGE =
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image.png-GcqzUZOxU1G63Zhu4qW4mKR6dDVPDV.jpeg";
+const HERO_VIDEO =
+  "https://res.cloudinary.com/oqd8cn54/video/upload/v1786642732/hero2_v3k1xh.mp4";
 
 function Hero() {
   const preventDownload = (e: React.SyntheticEvent) => {
@@ -89,7 +89,16 @@ function Hero() {
   };
 
   const preventKeyboardDownload = (e: React.KeyboardEvent) => {
-    if ((e.ctrlKey || e.metaKey) && ["u", "s", "p"].includes(e.key.toLowerCase())) {
+    // Prevent Ctrl/Cmd + S
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "s") {
+      e.preventDefault();
+    }
+
+    // Prevent common developer/download shortcuts
+    if (
+      (e.ctrlKey || e.metaKey) &&
+      ["u", "s", "p"].includes(e.key.toLowerCase())
+    ) {
       e.preventDefault();
     }
   };
@@ -97,22 +106,46 @@ function Hero() {
   return (
     <section
       id="top"
-      className="relative h-[60vh] overflow-hidden bg-black select-none md:h-screen"
+      className="relative h-[60vh] md:h-screen overflow-hidden bg-black select-none"
       onContextMenu={preventDownload}
       onDragStart={preventDownload}
       onKeyDown={preventKeyboardDownload}
       tabIndex={0}
     >
-      <img
-        src={HERO_IMAGE}
-        alt="Landscaped courtyard with a sculptural lotus fountain"
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        src={HERO_VIDEO}
+        controls={false}
+        controlsList="nodownload noplaybackrate"
+        disablePictureInPicture
+        disableRemotePlayback
         draggable={false}
         onContextMenu={preventDownload}
         onDragStart={preventDownload}
-        className="absolute left-1/2 top-1/2 min-h-full min-w-full -translate-x-1/2 -translate-y-1/2 object-cover pointer-events-none"
+        className="
+          absolute
+          left-1/2
+          top-1/2
+          min-w-full
+          min-h-full
+          -translate-x-1/2
+          -translate-y-1/2
+          object-cover
+          pointer-events-none
+        "
       />
 
-      <div className="absolute inset-0 z-10 select-none" aria-hidden="true" />
+      {/* Transparent protection layer */}
+      <div
+        className="absolute inset-0 z-10 select-none"
+        onContextMenu={preventDownload}
+        onDragStart={preventDownload}
+        aria-hidden="true"
+      />
     </section>
   );
 }
