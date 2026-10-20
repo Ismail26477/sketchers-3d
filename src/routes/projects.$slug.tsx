@@ -82,10 +82,7 @@ function ProjectPage() {
                   <dt className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Client</dt>
                   <dd className="mt-2 text-foreground/90">{project.client}</dd>
                 </div>
-                <div>
-                  <dt className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Architecture</dt>
-                  <dd className="mt-2 text-foreground/90">{project.typology}</dd>
-                </div>
+                
                 <div>
                   <dt className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Location</dt>
                   <dd className="mt-2 text-foreground/90">{project.location}</dd>
