@@ -66,7 +66,7 @@ export const PROJECTS: Project[] = [
     typology: "Plus Architecture",
     client: "Mahalaxmi Infra",
     description: "A richly landscaped residential community imagined as a complete lifestyle destination, with a welcoming clubhouse, wellness spaces, courts, gardens and gathering places.",
-    cover: gallery[0],
+    cover: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image.png-H2qrfNECSzmqEfsZy5D64j9oUtiwr7.jpeg",
     images: gallery,
   },
   {
